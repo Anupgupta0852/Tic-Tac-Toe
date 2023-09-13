@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+body
+{
+    background-color: rgb(11, 185, 185);
+    color: white;
+    /* height: 1200px; */
+}
+
+.main
+{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main h1
+{
+   text-decoration: underline;
+   /* font-weight: 600; */
+   margin:70px 0 30px 0;
+}
+
+.box
+{
+    display: inline-grid;
+    grid-template-columns: repeat(3,minmax(120px,1fr));
+    /* column-gap: 2px;
+    row-gap: 2px; */
+    /* background-color:beige ; */
+    /* border: 2px solid black;
+   border-radius: 5px; */
+}
+
+.cell
+{
+    border: 2px solid rgb(241, 235, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 60px;
+    font-weight: 600;
+    /* background-color:#2196F3; */
+    height: 120px;
+    cursor: pointer;
+}
+
+/* put values of n from 0 */
+ 
+.cell:nth-child(n)
+{
+border-top: none;
+}
+.cell:nth-child(3n)
+{
+    border-right: none;
+}
+.cell:nth-child(3n+1)
+{
+    border-left: none;
+}
+.cell:nth-child(n+7)
+{
+    border-bottom: none;
+}
+
+
+.players
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;    
+}
+
+.player
+{
+    margin-inline: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.restartBtn
+{
+    margin-block: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(70, 226, 23);
+    cursor: pointer;
+}
+
+.restartBtn:hover
+{
+    background-color: rgb(37, 195, 37);
+}
+
+
+.alertBox
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: aqua;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    height: 40px;
+    display: none;
+}
+
+@media screen and (max-width:550px) {
+    .box
+    {
+        grid-template-columns: repeat(3,minmax(90px,1fr));
+    }
+
+    .cell
+    {
+        height: 90px;
+        font-size: 50px;
+    }
+
+    .main h1
+{
+  font-size: 20px;
+}
+}
+
+.cell.disabled{
+    background-color: rgb(184, 167, 167);
+}
